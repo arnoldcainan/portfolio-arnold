@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arnold Cainan | Especialista em Front-end (React)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#1a202c',
+                        'accent-blue': '#4c7cff',
+                        'bg-light': '#f7fafc',
+                        'whatsapp-green': '#25D366',
+                        'text-secondary': '#718096',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fafc;
+            color: #1a202c;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .section-heading {
+            border-left: 4px solid #4c7cff;
+            padding-left: 1rem;
+            margin-bottom: 2rem;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(76, 124, 255, 0.15);
+        }
+        .tech-pill {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            margin: 0.25rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            background-color: #e2e8f0;
+            color: #2d3748;
+            transition: background-color 0.2s;
+        }
+        .tech-pill:hover {
+             background-color: #cbd5e0;
+        }
+    </style>
+</head>
+<body class="bg-bg-light text-primary-dark antialiased">
+
+    <header class="shadow-md bg-white sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-primary-dark">Arnold.dev</a>
+            <nav class="hidden md:flex space-x-6 text-lg font-medium">
+                <a href="#about" class="hover:text-accent-blue transition duration-300">Sobre</a>
+                <a href="#projects" class="hover:text-accent-blue transition duration-300">Projetos</a>
+                <a href="#contact" class="hover:text-accent-blue transition duration-300">Contato</a>
+            </nav>
+            <button id="menu-button" class="md:hidden text-primary-dark p-2 rounded-md hover:bg-gray-100 transition duration-300">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4">
+            <a href="#about" class="block py-2 text-lg hover:text-accent-blue transition duration-300 border-b border-gray-100">Sobre</a>
+            <a href="#projects" class="block py-2 text-lg hover:text-accent-blue transition duration-300 border-b border-gray-100">Projetos</a>
+            <a href="#contact" class="block py-2 text-lg hover:text-accent-blue transition duration-300 border-b border-gray-100">Contato</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="py-20 md:py-32 bg-primary-dark text-white">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+                <div class="md:w-3/5">
+                    <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Arnold Cainan Lopes de Oliveira Silva</h1>
+                    <h2 class="text-xl md:text-3xl text-accent-blue font-light mb-8">
+                        Construindo Interfaces Críticas: Experiências Digitais Rápidas, Acessíveis e em Tempo Real.
+                    </h2>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-accent-blue hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg flex items-center">
+                            <i data-lucide="mail" class="w-5 h-5 mr-2"></i> Contato
+                        </a>
+                        <a href="https://wa.me/5512997201332" target="_blank" class="bg-whatsapp-green hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg flex items-center">Whatsapp
+                        </a>
+                        <a href="https://github.com/arnoldcainan" target="_blank" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg flex items-center">
+                            <i data-lucide="github" class="w-5 h-5 mr-2"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-2/5 mt-10 md:mt-0 flex justify-center">
+                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQFLmEyODUECSw/profile-displayphoto-crop_800_800/B4DZnoWcbGJcAM-/0/1760539822250?e=1762387200&v=beta&t=ewivjDvhSByABUT4jeze1Jvj0s1sW7GL0WuRbLf58SA" 
+                         alt="Foto de perfil de Arnold Cainan, Desenvolvedor Front-end" 
+                         class="w-56 h-56 rounded-full object-cover border-4 border-accent-blue shadow-2xl" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/224x224/374151/ffffff?text=Falha+ao+Carregar+Foto';"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6">
+                <h3 class="text-4xl font-extrabold section-heading mb-10">Sobre Mim</h3>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h4 class="2xl font-bold mb-4 text-accent-blue">Paixão por Transformar Ideias em Experiências</h4>
+                        <p class="mb-4 text-lg">
+                            Sou um Engenheiro de Software Full Stack com paixão genuína pela camada Front-end. Vejo meu trabalho como a arte de <b>construir a ponte mais intuitiva e segura</b> que conecta o usuário final à complexidade da tecnologia.
+                        </p>
+                        <p class="mb-4 text-lg">
+                            Minha filosofia de desenvolvimento se baseia em <b>código limpo e reusável</b>, focando em entregar interfaces medidas pela <b>excelência em UX</b> e <b>performance de renderização</b> com React. Minha experiência abrange a integração de domínios desafiadores, como <b>Inteligência Artificial</b> e <b>Sistemas Embarcados</b>, em plataformas web.
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-lg mb-6">
+                            Ter esta visão sistêmica me permite colaborar de forma mais eficaz com equipes de produto e back-end, otimizando a comunicação (APIs, WebSockets) para garantir que a experiência Front-end seja sempre suave e responsiva.
+                        </p>
+                        <p class="text-lg font-semibold mb-4">
+                            O que me move:
+                        </p>
+                        <ul class="space-y-2 text-lg list-disc pl-5">
+                            <li><b>Cultura de Colaboração:</b> Trabalho em equipe e mentorado para crescimento mútuo.</li>
+                            <li><b>Excelência em React:</b> Arquitetura de Componentes, Redux/Zustand e Performance.</li>
+                            <li><b>Impacto em Real-Time:</b> Conectando interfaces a sistemas críticos (IoT/WebSockets).</li>
+                            <li><b>Visão Estratégica:</b> Full Stack (Node.js/Python) e Inovação (Patenteamento).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h3 class="text-4xl font-extrabold section-heading mb-12">Estudos de Caso de Destaque</h3>
+
+                <article class="project-card bg-white p-8 rounded-xl shadow-lg mb-12 transition duration-500 hover:shadow-xl">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-2/3 pr-8">
+                            <h4 class="text-3xl font-bold text-accent-blue mb-3">Plataforma de Gestão de IoT em Tempo Real</h4>
+                            <span class="inline-block text-sm font-medium bg-indigo-100 text-indigo-700 py-1 px-3 rounded-full mb-4">
+                                Ferramenta Interna de Controle Crítico (SaaS)
+                            </span>
+                            
+                            <p class="text-lg font-semibold mt-4">O Desafio:</p>
+                            <p class="text-gray-700">Garantir um *dashboard* de monitoramento e controle remoto de Sistemas Embarcados com <b>latência zero</b>. Atrasos na visualização ou envio de comandos comprometiam a segurança e a operação em campo.</p>
+                            
+                            <p class="text-lg font-semibold mt-6">Minha Solução:</p>
+                            <ul class="text-gray-700 space-y-2 list-disc pl-5">
+                                <li><b>Redesenho da Arquitetura React</b> para consumir dados assíncronos via <b>WebSockets (MQTT)</b>, abandonando o *polling* tradicional.</li>
+                                <li>Condução do <b>remapeamento e refatoração de componentes</b> para otimizar o *render* e receber atualizações constantes (Real-Time).</li>
+                                <li>Aplicação de Design System para garantir a consistência e a reusabilidade dos módulos.</li>
+                            </ul>
+
+                            <p class="text-lg font-semibold mt-6">Resultados/Aprendizados:</p>
+                            <p class="text-green-600 font-bold text-xl">
+                                🚀 Redução da Latência Percebida em 40% na interface.
+                            </p>
+                            <p class="text-gray-700 mt-2">
+                                Contribuição técnica crucial para a <b>documentação de Patente</b> da solução, validando a inovação da arquitetura de integração.
+                            </p>
+                        </div>
+                        <div class="md:w-1/3 mt-6 md:mt-0 flex flex-col justify-between">
+                            <h5 class="text-xl font-bold mb-4">Tecnologias:</h5>
+                            <div class="flex flex-wrap">
+                                <span class="tech-pill bg-accent-blue text-white">React.js</span>
+                                <span class="tech-pill">WebSockets (MQTT)</span>
+                                <span class="tech-pill">Node.js (Gateway)</span>
+                                <span class="tech-pill">Python (Flask)</span>
+                                <span class="tech-pill">Arquitetura de Componentes</span>
+                            </div>
+                            <canvas id="chart1" width="400" height="160" class="w-full h-40 object-cover rounded-lg mt-6 shadow-md bg-white border border-gray-200"></canvas>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card bg-white p-8 rounded-xl shadow-lg mb-12 transition duration-500 hover:shadow-xl">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-2/3 pr-8">
+                            <h4 class="text-3xl font-bold text-accent-blue mb-3">HealthFlow: Agendamento Médico de Alto Volume</h4>
+                            <span class="inline-block text-sm font-medium bg-orange-100 text-orange-700 py-1 px-3 rounded-full mb-4">
+                                Plataforma Web SaaS (Agendamento)
+                            </span>
+                            
+                            <p class="text-lg font-semibold mt-4">O Desafio:</p>
+                            <p class="text-gray-700">A aplicação de agendamento sofria com lentidão no carregamento de rotas e performance baixa (Lighthouse de 68), impactando o SEO e a conversão.</p>
+                            
+                            <p class="text-lg font-semibold mt-6">Minha Solução:</p>
+                            <ul class="text-gray-700 space-y-2 list-disc pl-5">
+                                <li>Migração da arquitetura Front-end para <b>Next.js</b>, aproveitando o *Server-Side Rendering (SSR)* em rotas críticas.</li>
+                                <li>Implementação agressiva de <b>lazy loading</b> e <b>Code Splitting</b> em todos os componentes de baixa prioridade.</li>
+                                <li>Otimização do *bundle size* e uso de <b>Tailwind CSS</b> para estilização eficiente.</li>
+                            </ul>
+
+                            <p class="text-lg font-semibold mt-6">Resultados/Aprendizados:</p>
+                            <p class="text-green-600 font-bold text-xl">
+                                📈 Melhoria da nota de Performance do Lighthouse de 68 para 94.
+                            </p>
+                            <p class="text-gray-700 mt-2">
+                                Redução do tempo de carregamento (FCP) em 2.1 segundos, otimizando o SEO e a experiência de agendamento.
+                            </p>
+                        </div>
+                        <div class="md:w-1/3 mt-6 md:mt-0 flex flex-col justify-between">
+                            <h5 class="text-xl font-bold mb-4">Tecnologias:</h5>
+                            <div class="flex flex-wrap">
+                                <span class="tech-pill bg-accent-blue text-white">Next.js</span>
+                                <span class="tech-pill">TypeScript</span>
+                                <span class="tech-pill">Tailwind CSS</span>
+                                <span class="tech-pill">API REST</span>
+                                <span class="tech-pill">SSR/SSG</span>
+                            </div>
+                            <canvas id="chart2" width="400" height="160" class="w-full h-40 object-cover rounded-lg mt-6 shadow-md bg-white border border-gray-200"></canvas>
+                        </div>
+                    </div>
+                </article>
+                
+            </div>
+        </section>
+
+        <section id="contact" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h3 class="text-4xl font-extrabold mb-4">Vamos Construir Algo Incrível Juntos!</h3>
+                <p class="text-xl text-gray-700 mb-10">
+                    Sou impulsionado por desafios de alto impacto. Se você está construindo algo inovador onde o Front-end precisa ser a espinha dorsal de performance e UX, <b>vamos conversar!</b>
+                </p>
+                <div class="flex justify-center space-x-6">
+                    <a href="mailto:arnold.cainan@gmail.com" class="bg-primary-dark hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-lg text-lg transition duration-300 shadow-xl flex items-center">
+                        <i data-lucide="send" class="w-6 h-6 mr-2"></i> Enviar um E-mail
+                    </a>
+                    <a href="https://www.linkedin.com/in/arnold-cainan-11542120b/" target="_blank" class="bg-accent-blue hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition duration-300 shadow-xl flex items-center">
+                        <i data-lucide="linkedin" class="w-6 h-6 mr-2"></i> Conectar no LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-primary-dark text-white py-6">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2025 Arnold Cainan. Desenvolvido com foco em React e performance.</p>
+            <p class="mt-2">Código no GitHub: https://github.com/arnoldcainan</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        const chartData = [
+            { id: 'chart1', title: 'Latência Reduzida (ms)', initial: 600, target: 360, color: '#10b981', reverse: true },
+            { id: 'chart2', title: 'Score Lighthouse', initial: 68, target: 94, color: '#2563eb', reverse: false }
+        ];
+
+        function drawAnimatedChart(canvasId, title, initialValue, targetValue, color, reverse) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return;
+
+            const width = canvas.width;
+            const height = canvas.height;
+            const ctx = canvas.getContext('2d');
+            
+            const padding = 15;
+            const innerWidth = width - padding * 2;
+            const innerHeight = height - padding * 2;
+            const maxVal = reverse ? initialValue : 100;
+            const minVal = reverse ? targetValue : 0;
+            
+            const getNormalizedY = (value) => {
+                let scaledValue;
+                if (reverse) {
+                    scaledValue = (maxVal - value) / (maxVal - minVal);
+                } else {
+                    scaledValue = (value - minVal) / (maxVal - minVal);
+                }
+                return innerHeight - (scaledValue * innerHeight);
+            };
+
+            const dataPoints = 30;
+            const animatedPoints = Array(dataPoints).fill(getNormalizedY(initialValue));
+            let animationProgress = 0;
+            const animationDuration = 120;
+            let lastValue = initialValue;
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                ctx.save();
+                ctx.translate(padding, padding);
+
+                ctx.fillStyle = '#1a202c';
+                ctx.font = '12px Inter';
+                ctx.fillText(title, 5, -5);
+
+                ctx.strokeStyle = '#ccc';
+                ctx.setLineDash([4, 2]);
+                ctx.beginPath();
+                ctx.moveTo(0, getNormalizedY(initialValue));
+                ctx.lineTo(innerWidth, getNormalizedY(initialValue));
+                ctx.stroke();
+
+                ctx.strokeStyle = '#ccc';
+                ctx.setLineDash([4, 2]);
+                ctx.beginPath();
+                ctx.moveTo(0, getNormalizedY(targetValue));
+                ctx.lineTo(innerWidth, getNormalizedY(targetValue));
+                ctx.stroke();
+                
+                ctx.setLineDash([]); 
+
+                if (animationProgress < animationDuration) {
+                    animationProgress++;
+                    
+                    const t = animationProgress / animationDuration;
+                    const smoothedT = 0.5 - Math.cos(t * Math.PI) / 2; 
+
+                    const currentValue = initialValue + (targetValue - initialValue) * smoothedT;
+                    lastValue = currentValue;
+
+                    animatedPoints.shift();
+                    animatedPoints.push(getNormalizedY(currentValue));
+
+                } else {
+                    animatedPoints.shift();
+                    animatedPoints.push(getNormalizedY(targetValue));
+                    lastValue = targetValue;
+                }
+                
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                
+                if (!reverse) {
+                    ctx.moveTo(0, innerHeight);
+                }
+                
+                animatedPoints.forEach((y, i) => {
+                    const x = (i / (dataPoints - 1)) * innerWidth;
+                    if (i === 0) {
+                        ctx.moveTo(x, y);
+                    } else {
+                        ctx.lineTo(x, y);
+                    }
+                });
+
+                if (!reverse) {
+                    ctx.lineTo(innerWidth, innerHeight);
+                    ctx.lineTo(0, innerHeight);
+                    ctx.closePath();
+                    ctx.fillStyle = `${color}33`;
+                    ctx.fill();
+                    ctx.beginPath();
+                    
+                    animatedPoints.forEach((y, i) => {
+                        const x = (i / (dataPoints - 1)) * innerWidth;
+                        if (i === 0) {
+                            ctx.moveTo(x, y);
+                        } else {
+                            ctx.lineTo(x, y);
+                        }
+                    });
+                }
+                
+                ctx.stroke();
+                
+                ctx.font = '16px Inter bold';
+                ctx.fillStyle = color;
+                const finalValueText = reverse ? `${Math.round(lastValue)}ms` : `${Math.round(lastValue)}`;
+                const label = reverse ? 'Latência:' : 'Score:';
+                
+                ctx.fillText(`${label} ${finalValueText}`, 5, 20);
+                ctx.restore();
+
+                requestAnimationFrame(animate);
+            }
+
+            requestAnimationFrame(animate);
+            
+            window.addEventListener('resize', () => {
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+            });
+        }
+
+        window.onload = function() {
+            lucide.createIcons();
+
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });        
+            
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            chartData.forEach(data => {
+                setTimeout(() => {
+                    drawAnimatedChart(data.id, data.title, data.initial, data.target, data.color, data.reverse);
+                }, 100); 
+            });
+        };
+    </script>
+</body>
+</html>
